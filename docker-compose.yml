@@ -275,7 +275,7 @@ services:
           - node.role == manager
           - node.labels.database == true
     volumes:
-      - storage:/var/lib/storage:z
+      - storage-data:/var/lib/storage:z
     healthcheck:
       test:
         [
@@ -318,7 +318,7 @@ services:
       restart_policy:
         condition: on-failure
     volumes:
-      - storage:/var/lib/storage:z
+      - storage-data:/var/lib/storage:z
     healthcheck:
       test:
         [
@@ -587,7 +587,7 @@ services:
 volumes:
   db-config:
   db-data:
-  storage:
+  storage-data:
 
 networks:
   traefik:
